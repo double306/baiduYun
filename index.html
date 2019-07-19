@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>仿百度云网盘demo</title>
+    <link rel="stylesheet" href="common/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="common/common.css">
+</head>
+<body>
+    <div class="wrap bgColor">
+        <nav class="navbar navbar-default marBot0">
+            <div class="container-fluid">
+                <div class="navbar-header clearfix">
+                    <a class="navbar-brand" href="#">
+                        <img  src="common/images/logo.png" alt="Brand" width="284" height="64">
+                    </a>
+                    <!--<ul class="nav nav-pills node-link">-->
+                        <!--<li role="presentation" >-->
+                            <!--<a href="#">网盘</a>-->
+                            <!--<span></span>-->
+                        <!--</li>-->
+                        <!--<li role="presentation" ><a href="#">分享</a></li>-->
+                        <!--<li role="presentation" ><a href="#">找资源</a></li>-->
+                        <!--<li role="presentation" ><a href="#">更多</a></li>-->
+                    <!--</ul>-->
+                </div>
+            </div>
+        </nav>
+        <div class="bgColor padding0 container-fluid clearfix" id="main">
+            <div class=" rsWid bgColor" >
+                <ul class="nav nav-pills nav-stacked menu-left " id="menuLeft">
+                    <li role="presentation" >
+                        <a href="#">
+                            <span class="txt">
+                                <span class="glyphicon glyphicon-list-alt"></span>
+                                <span>全部文件</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="active" onclick="showUrl(this,'./modules/picture/pictureShow.html')">
+                        <a href="javascript:void(0)" >
+                            <span class="txt">
+                                <span class="glyphicon "></span>
+                                <span class="rsColor">图片</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" onclick="showUrl(this,'./modules/document/documentFiles.html')">
+                        <a href="javascript:void(0)">
+                            <span class="txt">
+                                <span class="glyphicon"></span>
+                                <span class="rsColor">文档</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#" >
+                            <span class="txt">
+                                <span class="glyphicon"></span>
+                                <span>视频</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#" class="padding0">
+                            <span class="txt">
+                                <span class="glyphicon"></span>
+                                <span>种子</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#">
+                            <span class="txt">
+                                <span class="glyphicon"></span>
+                                <span>音乐</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" >
+                        <a href="#">
+                            <span class="txt">
+                                <span class="glyphicon"></span>
+                                <span>其它</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" >
+                        <a href="#" >
+                            <span class="txt">
+                                <span class="glyphicon glyphicon-share"></span>
+                                <span>我的分享</span>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" >
+                        <a href="#" >
+                            <span class="txt">
+                                <span class="glyphicon glyphicon-trash"></span>
+                                <span>回收站</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-10 col-sm-10 autoContent" id="iframepage"></div>
+        </div>
+    </div>
+    <script src="common/jquery/jquery-3.3.1.min.js"></script>
+    <script src="common/bootstrap/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/dayjs/1.7.7/dayjs.min.js"></script>
+ <script>
+     $(function () {
+         $('#iframepage').load('./modules/picture/pictureShow.html');
+     });
+     var showUrl = function (obj,url) {
+         $(obj).addClass('active').siblings('li').removeClass('active');
+         $('#iframepage').load(url);
+     }
+ </script>
+</body>
+</html>
